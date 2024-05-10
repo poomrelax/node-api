@@ -9,6 +9,9 @@ app.use(cors())
 
 app.use(bodyparser.json())
 
+app.get('/', (req, res) => {
+  res.send('Hello Word')
+})
 
 app.get('/video', (req, res) => {
   res.json(db)
