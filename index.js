@@ -7,10 +7,10 @@ const bodyparser = require('body-parser')
 
 app.use(cors())
 
-app.use(bodyparser.json())
+app.use(bodyparser.json())  
 
 app.get('/', (req, res) => {
-  res.send('Hello Word')
+  res.send('Hello')
 })
 
 app.get('/video', (req, res) => {
