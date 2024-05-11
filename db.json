@@ -1,17 +1,16 @@
-
 [
-    {
-      "id": "2",
-      "name": "กิน KFC🍗 ราคา 1,000 บ.💸 | ASMR 🎞️",
-      "detail": "คริปกินKFC ASMR ตลกๆ ฮ่าๆ",
-      "Link" : "https://youtu.be/U6GrG2-P-Rs?si=RGJ4pjEkfNeNO56i",
-      "url": "https://addimagepoom.000webhostapp.com/upload/KFC_20240430_185531_0000.png"
-    },
-    {
-      "id": "3",
-      "name": "ตัวอย่าง เรื่อง พี่เณร1/2 | PEENAN 1 horror",
-      "detail": "ตัวอย่าง เรื่อง พี่เณร1/2 version หน้ากลัวกว่าเดิม",
-      "Link" : "https://youtu.be/AUGg6kXCQo0?si=AJ5qb2CZlukp4L1D",
-      "url": "https://i.ytimg.com/vi/AUGg6kXCQo0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCQtF-mirxVaAy7_JOiE183ULj4pg"
-    }
+  {
+    "id": "2",
+    "name": "กิน KFC🍗 ราคา 1,000 บ.💸 | ASMR 🎞️",
+    "detail": "คริปกินKFC ASMR ตลกๆ ฮ่าๆ",
+    "Link": "https://youtu.be/U6GrG2-P-Rs?si=RGJ4pjEkfNeNO56i",
+    "url": "https://i.ytimg.com/vi/U6GrG2-P-Rs/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBKNkicfIlCrWamN_i-ol6B3QQFRw"
+  },
+  {
+    "id": "3",
+    "name": "ตัวอย่าง เรื่อง พี่เณร1/2 | PEENAN 1 horror",
+    "detail": "ตัวอย่าง เรื่อง พี่เณร1/2 version หน้ากลัวกว่าเดิม",
+    "Link": "https://youtu.be/AUGg6kXCQo0?si=AJ5qb2CZlukp4L1D",
+    "url": "https://i.ytimg.com/vi/AUGg6kXCQo0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCQtF-mirxVaAy7_JOiE183ULj4pg"
+  }
 ]
