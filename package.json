@@ -11,11 +11,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@doist/todoist-api-typescript": "^3.0.3",
     "axios": "^1.6.8",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.1",
     "firebase": "^10.11.1",
-    "nodemon": "^3.1.0"
+    "mongoose": "^6.10.0",
+    "nodemon": "^3.1.0",
+    "openai": "^4.47.1"
   }
 }
