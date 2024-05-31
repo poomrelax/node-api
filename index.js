@@ -57,38 +57,32 @@ app.get('/infor', (req, res) => {
 // })()
 
 app.get('/homework', async (req, res) => {
-  async function getuserprojects() {
-    try{
-      const projects = await api.getProjects();
-      return projects;
-    }catch(err) {
-      console.log(err)
-    }
-  } 
-  
-  async function getTasksid(projectsId) {
-    try{
-      const tasks = await api.getTask({projectsId})
-      return tasks
-    }catch(err) {
-      console.log(err)
-    }
+ 
+async function getuserprojects() {
+  try{
+    const projects = await api.getProjects();
+    return projects;
+  }catch(err) {
+    console.log(err)
   }
-  
-  (async() => {
-    const projects = await getuserprojects()
-    // console.log(projects)
-  
-    const tasks = await getTasksid(projects[0].id);
-    // const date = new Date()
-    // const dm = date.getMonth()+1
-    // const dy = date.getFullYear()
-    // const dh = date.getHours()
-    // const dmin = date.getMinutes()
-    // const datefull = dy + "/" + dm + "/" + dh + "/" + dmin
-    // console.log(datefull)
-    res.json(tasks)
-  })()
+} 
+
+async function getTasks(projectsId) {
+  try{
+    const tasks = await api.getTasks({projectsId})
+    return tasks
+  }catch(err) {
+    console.log(err)
+  }
+}
+
+(async() => {
+  const projects = await getuserprojects()
+  console.log(projects)
+
+  const tasks = await getTasks(projects[0].id);
+  console.log(tasks)
+})()
 })
 
 app.delete('/homework', async (req, res) => {
