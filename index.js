@@ -30,31 +30,31 @@ app.get('/infor', (req, res) => {
   res.json(infor)
 })
 
-async function getuserprojects() {
-  try{
-    const projects = await api.getProjects();
-    return projects;
-  }catch(err) {
-    console.log(err)
-  }
-} 
+// async function getuserprojects() {
+//   try{
+//     const projects = await api.getProjects();
+//     return projects;
+//   }catch(err) {
+//     console.log(err)
+//   }
+// } 
 
-async function getTasks(projectsId) {
-  try{
-    const tasks = await api.getTasks({projectsId})
-    return tasks
-  }catch(err) {
-    console.log(err)
-  }
-}
+// async function getTasks(projectsId) {
+//   try{
+//     const tasks = await api.getTasks({projectsId})
+//     return tasks
+//   }catch(err) {
+//     console.log(err)
+//   }
+// }
 
-(async() => {
-  const projects = await getuserprojects()
-  console.log(projects)
+// (async() => {
+//   const projects = await getuserprojects()
+//   console.log(projects)
 
-  const tasks = await getTasks(projects[0].id);
-  console.log(tasks)
-})()
+//   const tasks = await getTasks(projects[0].id);
+//   console.log(tasks)
+// })()
 
 app.get('/homework', async (req, res) => {
   async function getuserprojects() {
