@@ -66,7 +66,7 @@ app.get('/homework', async (req, res) => {
     }
   } 
   
-  async function getTasks(projectsId) {
+  async function getTasksid(projectsId) {
     try{
       const tasks = await api.getTask({projectsId})
       return tasks
@@ -79,7 +79,7 @@ app.get('/homework', async (req, res) => {
     const projects = await getuserprojects()
     // console.log(projects)
   
-    const tasks = await getTasks(projects[0].id);
+    const tasks = await getTasksid(projects[0].id);
     // const date = new Date()
     // const dm = date.getMonth()+1
     // const dy = date.getFullYear()
