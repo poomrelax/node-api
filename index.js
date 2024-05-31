@@ -68,7 +68,7 @@ app.get('/homework', async (req, res) => {
   
   async function getTasks(projectsId) {
     try{
-      const tasks = await api.getTasks({projectsId})
+      const tasks = await api.getTask({projectsId})
       return tasks
     }catch(err) {
       console.log(err)
