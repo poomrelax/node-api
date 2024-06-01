@@ -82,6 +82,7 @@ async function getTasks(projectsId) {
 
   const tasks = await getTasks(projects[0].id);
   console.log(tasks)
+  res.json(tasks)
 })()
 })
 
