@@ -67,7 +67,7 @@ async function getuserprojects() {
   }
 } 
 
-async function getTasks(projectsId) {
+async function GetTasks(projectsId) {
   try{
     const tasks = await api.getTasks({projectsId})
     return tasks
@@ -80,7 +80,7 @@ async function getTasks(projectsId) {
   const projects = await getuserprojects()
   console.log(projects)
 
-  const tasks = await getTasks(projects[0].id);
+  const tasks = await GetTasks(projects[0].id);
   console.log(tasks)
   res.json(tasks)
 })()
