@@ -1,15 +1,21 @@
 const mongo = require("mongoose")
-mongo.connect('mongodb://localhost:27017/homework',  {useNewUrlParser: true})
+require('dotenv').config()
+
+    mongo.set('strictQuery', false);
+    mongo.connect(process.env.API_HOMEWORK)
     .then(() => console.log('connect mongodb'))
     .catch((err) => console.log(err))
 
-mongo.set('strictQuery', false);
-const maths = new mongo.Schema({
-    subject : String,
-    name: String,
-    desc: String,
-    Already: Boolean,
-    date: String
-})
+    const maths = new mongo.Schema({
+        subject : String,
+        name: String,
+        desc: String,
+        Already: Boolean,
+        date: String
+    })
 
-module.exports = mongo.model('maths', maths)
+const homework = mongo.model("main", maths)
+
+
+
+module.exports = homework
