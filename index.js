@@ -14,6 +14,8 @@ require('dotenv').config()
 
 // const collection = require('./homework')
 const bodyparser = require('body-parser')
+const { default: axios } = require('axios')
+const { now } = require('mongoose')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors())
@@ -40,16 +42,86 @@ app.get('/homework', (req, res, next) => {
 })
 
 app.post('/homework', async (req, res, next) => {
-  homework.create(req.body, (err, post) => {
-    if (err) return next(err)
-      res.json(post)
-  })
+  const resBody = req.body
+  const ddd = new Date()
+   const dm = ddd.getMonth() + 1
+   const dy = ddd.getFullYear()
+   const dd = ddd.getDate()
+   const dh = ddd.getHours()
+   const dmt = ddd.getMinutes()
+   const ds = ddd.getSeconds()
+  const objtime = `${dh}:${dmt}:${ds}`
+  const objDate = `${dd}/${dm}/${dy}`
+   const message = "\n" + "รายงานการบ้านวันที่:" + objDate + "\n" 
+                   + "เวลา:" + " " + objtime + "\n" 
+                   + "วิชา:" + " " + resBody.subject + "\n" 
+                   + "เรื่อง:" + " " + resBody.desc + "\n"
+                   + "สามารถดูเพิ่มเติมได้ที่:" + " " + "URL"
+
+  // const objbody = (resBody, `${dh}:${dmt}:${ds}`)
+    const Homework = new homework({
+        subject : resBody.subject,
+        desc: resBody.desc,
+        date: objDate
+    })
+
+    Homework.save()
+
+    const tokenline = process.env.TOKEN_LINE
+   await axios({
+     method: 'POST',
+     url: 'https://notify-api.line.me/api/notify',
+     headers: {
+       'Content-Type': 'application/x-www-form-urlencoded',
+       'Authorization': 'Bearer ' + tokenline
+     },
+     data: {
+       'message': message
+     }
+   }).then(res.json({
+     "Status" : 200,
+     "message" : "Successful."
+   }))
 })
 
-app.delete('/homework/:id', (req, res) => {
-  homework.findByIdAndDelete(req.params.id, (err, post) => {
-    res.json(post)
+app.delete('/homework/:id', async (req, res, next) => {
+  homework.findByIdAndDelete(req.params.id, async (err, post) => {
+    if(err) return next(err);
+
+    const ddd = new Date()
+   const dm = ddd.getMonth() + 1
+   const dy = ddd.getFullYear()
+   const dd = ddd.getDate()
+   const dh = ddd.getHours()
+   const dmt = ddd.getMinutes()
+   const ds = ddd.getSeconds()
+  const objtime = `${dh}:${dmt}:${ds}`
+  const objDate = `${dd}/${dm}/${dy}`
+   const message = "\n" + "ทำการบ้านเสร็จวันที่:" + objDate + "\n" 
+                   + "เวลา:" + " " + objtime + "\n" 
+                   + "วิชา:" + " " + post.subject + "\n" 
+                   + "เรื่อง:" + " " + post.desc + "\n"
+                   + "สามารถดูเพิ่มเติมได้ที่:" + " " + "URL"
+
+  const tokenline = process.env.TOKEN_LINE
+  await axios({
+    method: 'POST',
+    url: 'https://notify-api.line.me/api/notify',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Bearer ' + tokenline
+    },
+    data: {
+      'message': message
+    }
+  }).then(res.json({
+    "Status" : 200,
+    "message" : "Successful."
+  }))
   })
+
+  // const resBody = req.body
+  
 })
 
 app.post('/loginhomework', async (req, res) => {
@@ -85,11 +157,17 @@ app.post('/loginhomework', async (req, res) => {
 })
 
 app.post('/createloginhomework', async (req, res, next) => {
+
+
   loginhomework.create(req.body, (err, post) => {
     if (err) return next(err)
       res.json(post)
   })
 })
+
+// app.post('/linenotify', async (req, res) => {
+ 
+// })
 
 // async function getuserprojects() {
 //   try{

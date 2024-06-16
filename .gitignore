@@ -1,4 +1,4 @@
 /node_modules
+.env
 homework.js
 homeworkloginmogo.js
-.env
