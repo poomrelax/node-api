@@ -53,7 +53,6 @@ app.post('/homework', async (req, res, next) => {
   const objtime = `${dh}:${dmt}:${ds}`
   const objDate = `${dd}/${dm}/${dy}`
    const message = "\n" + "รายงานการบ้านวันที่:" + objDate + "\n" 
-                   + "เวลา:" + " " + objtime + "\n" 
                    + "วิชา:" + " " + resBody.subject + "\n" 
                    + "เรื่อง:" + " " + resBody.desc + "\n"
                    + "สามารถดูเพิ่มเติมได้ที่:" + " " + "URL"
@@ -88,7 +87,7 @@ app.delete('/homework/:id', async (req, res, next) => {
   homework.findByIdAndDelete(req.params.id, async (err, post) => {
     if(err) return next(err);
 
-    const ddd = new Date()
+   const ddd = new Date()
    const dm = ddd.getMonth() + 1
    const dy = ddd.getFullYear()
    const dd = ddd.getDate()
@@ -98,7 +97,6 @@ app.delete('/homework/:id', async (req, res, next) => {
   const objtime = `${dh}:${dmt}:${ds}`
   const objDate = `${dd}/${dm}/${dy}`
    const message = "\n" + "ทำการบ้านเสร็จวันที่:" + objDate + "\n" 
-                   + "เวลา:" + " " + objtime + "\n" 
                    + "วิชา:" + " " + post.subject + "\n" 
                    + "เรื่อง:" + " " + post.desc + "\n"
                    + "สามารถดูเพิ่มเติมได้ที่:" + " " + "URL"
