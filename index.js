@@ -55,7 +55,7 @@ app.post('/homework', async (req, res, next) => {
    const message = "\n" + "รายงานการบ้านวันที่:" + objDate + "\n" 
                    + "วิชา:" + " " + resBody.subject + "\n" 
                    + "เรื่อง:" + " " + resBody.desc + "\n"
-                   + "สามารถดูเพิ่มเติมได้ที่:" + " " + "URL"
+                   + "สามารถดูเพิ่มเติมได้ที่:" + " " + "https://famous-blancmange-bcb1a1.netlify.app/homework"
 
   // const objbody = (resBody, `${dh}:${dmt}:${ds}`)
     const Homework = new homework({
@@ -99,7 +99,7 @@ app.delete('/homework/:id', async (req, res, next) => {
    const message = "\n" + "ทำการบ้านเสร็จวันที่:" + objDate + "\n" 
                    + "วิชา:" + " " + post.subject + "\n" 
                    + "เรื่อง:" + " " + post.desc + "\n"
-                   + "สามารถดูเพิ่มเติมได้ที่:" + " " + "URL"
+                   + "สามารถดูเพิ่มเติมได้ที่:" + " " + "https://famous-blancmange-bcb1a1.netlify.app/homework"
 
   const tokenline = process.env.TOKEN_LINE
   await axios({
