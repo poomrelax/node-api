@@ -55,7 +55,7 @@ app.post('/homework', async (req, res, next) => {
    const message = "\n" + "รายงานการบ้านวันที่:" + objDate + "\n" 
                    + "วิชา:" + " " + resBody.subject + "\n" 
                    + "เรื่อง:" + " " + resBody.desc + "\n"
-                   + "สามารถดูเพิ่มเติมได้ที่:" + " " + "https://famous-blancmange-bcb1a1.netlify.app/homework"
+                   + "สามารถดูเพิ่มเติมได้ที่:" + " " + "https://famous-blancmange-bcb1a1.netlify.app/"
 
   // const objbody = (resBody, `${dh}:${dmt}:${ds}`)
     const Homework = new homework({
