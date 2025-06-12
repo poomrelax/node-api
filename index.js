@@ -43,13 +43,13 @@ app.get('/infor', (req, res) => {
   res.json(infor)
 })
 
-app.get('/homework', (req, res, next) => {
-  homework.find((err, work) => {
-    if(err) return next(err);
-    res.json(work)
-    // res.json(homework)
-  })
-})
+// app.get('/homework', (req, res, next) => {
+//   homework.find((err, work) => {
+//     if(err) return next(err);
+//     res.json(work)
+//     // res.json(homework)
+//   })
+// })
 
 app.post('/homework', async (req, res, next) => {
   const resBody = req.body
